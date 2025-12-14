@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BikeDekho – Purchase Trend Analysis</title>
+
+<style>
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --accent: #38bdf8;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(120deg, #020617, #0f172a);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem 1.2rem;
+}
+
+section {
+  margin-bottom: 4rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero span {
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 700px;
+  margin: auto;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(56,189,248,0.15);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+h2 {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.6rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted);
+}
+
+.footer span {
+  color: var(--accent);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Data Analytics Project</div>
+    <h1>BikeDekho <span>Purchase Trend Analysis</span></h1>
+    <p>
+      A complete data analytics project analyzing gender-wise bike purchase behavior
+      using real-world dataset patterns, dashboards, and automated reporting.
+    </p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section>
+    <h2>📘 Project Overview</h2>
+    <div class="card">
+      This project focuses on understanding consumer behavior on BikeDekho using
+      gender-segmented purchase data. The objective was to analyze purchase trends,
+      conversion rates, income and age impact, and generate actionable business insights
+      using visual dashboards and a final PDF report.
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section>
+    <h2>🛠 Tech Stack</h2>
+    <div class="grid grid-3">
+      <div class="card">Python (Pandas, Matplotlib)<br><small>Data cleaning & analysis</small></div>
+      <div class="card">Excel<br><small>Raw data & dashboards</small></div>
+      <div class="card">ReportLab<br><small>Automated PDF report</small></div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section>
+    <h2>📊 Data Analysis Workflow</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <strong>Data Understanding</strong>
+        <ul>
+          <li>Total Purchased</li>
+          <li>Not Purchased</li>
+          <li>Conversion Rate</li>
+          <li>Average Income</li>
+          <li>Average Age</li>
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Data Cleaning</strong>
+        <ul>
+          <li>Removed noisy headers</li>
+          <li>Converted numeric fields</li>
+          <li>Filtered valid gender categories</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section>
+    <h2>📈 Dashboard Visualizations</h2>
+    <div class="grid grid-2">
+      <img src="images/dashboard1.png" alt="Dashboard 1">
+      <img src="images/dashboard2.png" alt="Dashboard 2">
+      <img src="images/dashboard3.png" alt="Dashboard 3">
+      <img src="images/dashboard4.png" alt="Dashboard 4">
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section>
+    <h2>🔍 Key Insights</h2>
+    <div class="card">
+      <ul>
+        <li>Women show slightly higher purchase conversion rate (48.5%) than men.</li>
+        <li>Income differences do not significantly impact buying decisions.</li>
+        <li>Average age across genders is nearly identical (~44 years).</li>
+        <li>Men have higher purchase volume mainly due to sample size.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DELIVERABLES -->
+  <section>
+    <h2>📄 Deliverables</h2>
+    <div class="card">
+      ✔ Cleaned dataset<br>
+      ✔ Visual dashboards<br>
+      ✔ Insight summary<br>
+      ✔ Automated PDF report<br>
+      ✔ GitHub-ready documentation
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Built by <span>Sarthak Bora</span> • Data Analyst  
+</div>
+
+</body>
+</html>
+
