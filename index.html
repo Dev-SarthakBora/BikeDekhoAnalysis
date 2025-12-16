@@ -42,6 +42,7 @@ section {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* HERO */
 .hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -72,6 +73,7 @@ section {
   margin-bottom: 1rem;
 }
 
+/* CARD */
 .card {
   background: var(--card);
   border-radius: 14px;
@@ -79,6 +81,7 @@ section {
   box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
 }
 
+/* GRID */
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -102,16 +105,43 @@ ul {
   padding-left: 1.2rem;
 }
 
-img {
+/* DASHBOARD IMAGES */
+.dashboard-img {
   width: 100%;
   border-radius: 12px;
-  transition: transform 0.4s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-img:hover {
+.dashboard-img:hover {
   transform: scale(1.03);
 }
 
+/* ===== MODAL (IMAGE ZOOM) ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1.5rem;
+}
+
+.modal img {
+  max-width: 95%;
+  max-height: 90vh;
+  border-radius: 14px;
+  background: #020617;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.modal.show {
+  display: flex;
+}
+
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -189,10 +219,10 @@ img:hover {
   <section>
     <h2>📈 Dashboard Visualizations</h2>
     <div class="grid grid-2">
-      <img src="images/dashboard1.png" alt="Dashboard 1">
-      <img src="images/dashboard2.png" alt="Dashboard 2">
-      <img src="images/dashboard3.png" alt="Dashboard 3">
-      <img src="images/dashboard4.png" alt="Dashboard 4">
+      <img src="images/dashboard1.png" class="dashboard-img" onclick="openModal(this)">
+      <img src="images/dashboard2.png" class="dashboard-img" onclick="openModal(this)">
+      <img src="images/dashboard3.png" class="dashboard-img" onclick="openModal(this)">
+      <img src="images/dashboard4.png" class="dashboard-img" onclick="openModal(this)">
     </div>
   </section>
 
@@ -223,11 +253,32 @@ img:hover {
 
 </div>
 
+<!-- IMAGE MODAL -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
 <!-- FOOTER -->
 <div class="footer">
-  Built by <span>Sarthak Bora</span> • Data Analyst  
+  Built by <span>Sarthak Bora</span> • Data Analyst
 </div>
+
+<script>
+function openModal(img){
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  modalImg.src = img.src;
+  modal.classList.add("show");
+}
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
+}
+
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeModal();
+});
+</script>
 
 </body>
 </html>
-
